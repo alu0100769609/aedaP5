@@ -46,7 +46,15 @@ El objetivo de esta práctica es la implementación de los algoritmos de ordenac
 
 #### Compilación
 
+```bash
+$ g++ main/main.cpp cpp/*.cpp -o main.out
+```
+
 #### Ejecución
+
+```bash
+$ ./main.out
+```
 
 ### Autor
 
