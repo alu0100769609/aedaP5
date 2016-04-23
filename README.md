@@ -44,6 +44,13 @@ El objetivo de esta práctica es la implementación de los algoritmos de ordenac
 
 ### Forma de uso
 
+Al ejecutar el programa nos pedirá la inserción de un DNI. Los formatos permitidos para el DNI son los siguientes:
+
+| MAYÚSCULAS | MINÚSCULAS |   ESPACIOS   |
+|------------|------------|--------------|
+| 12345678A  | 12345678a  | 12345678 a   |
+| 12345678-A | 12345678-a | 12345678 - a |
+
 #### Compilación
 
 ```bash

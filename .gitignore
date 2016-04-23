@@ -1,4 +1,4 @@
-*.out  # Executable files
-*~     # Backup files
-*.txt  # Text files
-*.log  # Compilation errors file
+*.out
+*~
+*.txt
+*.log
