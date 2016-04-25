@@ -40,7 +40,7 @@ De forma **opcional** se puede:
 * Implementar el resto de algoritmos de ordenación vistos en la asignatura
 
 ### Objetivo
-El objetivo de esta práctica es la implementación de los algoritmos de ordenación y su estudio mediante los modos `estadístico` y `demostración` además de recordar la sobrecarga de operadores y la definición de plantillas que se han implementado en prácticas anteriores.
+El objetivo de esta práctica es la implementación de los **algoritmos de ordenación y su estudio** mediante los modos `estadístico` y `demostración` además de recordar la **sobrecarga de operadores**, el **manejo de excepciones** mediante try-catch y la definición de **plantillas** que se han implementado en prácticas anteriores.
 
 ### Forma de uso
 
