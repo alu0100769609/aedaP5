@@ -9,16 +9,17 @@ using namespace std;
 template <class TDATO>
 class Sort{
 private:
-   TDATO* array;                    // Array with elements
-   int size;                        // Size of array
+   TDATO* array;                       // Array with elements
+   int size;                           // Size of array
 
 public:
-//   Sort();                          // Default constructor
-   Sort(TDATO vector[], int size);  // Constructor (Vector, size of vector)
-   ~Sort();                         // Default destructor
+//   Sort();                           // Default constructor
+   Sort(TDATO vector[], int size);     // Constructor (Vector, size of vector)
+   ~Sort();                            // Default destructor
 
 public:                 // Public Sort methods
-   void directInsertion();               // Direct insertion
+   void directInsertion();             // Direct insertion
+   void bubbleSort();                  // Bubble Sort
 public:
    void printItems();
 };
@@ -51,16 +52,33 @@ void Sort<TDATO>::printItems(){
    cout << endl;
 }
 
+///////////////////////////////// Sort Methods /////////////////////////////////
 template <class TDATO>
 void Sort<TDATO>::directInsertion(){
-   TDATO position;
+   TDATO token;
    for (int i = 1; i < size; i++) {
-      position = array[i];
+      token = array[i];
       int j = i - 1;
-      while (j >= 0 && array[j] > position) {
+      while (j >= 0 && array[j] > token) {
          array[j + 1] = array[j];
          j--;
       }
-      array[j + 1] = position;
+      array[j + 1] = token;
+   }
+}
+
+template <class TDATO>
+void Sort<TDATO>::bubbleSort(){
+   TDATO token;
+   for(int i = 0; i < size; i++){
+      // Comparaciones
+	   for(int j = 0; j < size - i; j++){
+         // Intercambiar los elementos
+	      if(array[j] > array[j+1]){
+            token = array[j];
+		      array[j] = array[j+1];
+		      array[j+1] = token;
+         }
+      }
    }
 }

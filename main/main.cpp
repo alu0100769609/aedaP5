@@ -20,7 +20,8 @@ int main () {
    cout << "Vector antes: ";
    t.printItems();
 
-   t.directInsertion();
+//   t.directInsertion();
+   t.bubbleSort();
    cout << "Vector despues: ";
    t.printItems();
 
