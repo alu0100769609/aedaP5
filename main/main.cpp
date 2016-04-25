@@ -21,7 +21,8 @@ int main () {
    t.printItems();
 
 //   t.directInsertion();
-   t.bubbleSort();
+//   t.bubbleSort();
+   t.quickSort(0,t.getSize());
    cout << "Vector despues: ";
    t.printItems();
 

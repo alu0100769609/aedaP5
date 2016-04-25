@@ -19,9 +19,11 @@ public:
 
 public:                 // Public Sort methods
    void directInsertion();             // Direct insertion
-   void bubbleSort();                  // Bubble Sort
+   void bubbleSort();                  // Bubble sort
+   void quickSort(int, int);           // Quick sort
 public:
    void printItems();
+   int getSize() { return size; }
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -71,9 +73,9 @@ template <class TDATO>
 void Sort<TDATO>::bubbleSort(){
    TDATO token;
    for(int i = 0; i < size; i++){
-      // Comparaciones
+      // Comparsion
 	   for(int j = 0; j < size - i; j++){
-         // Intercambiar los elementos
+         // Exchange elements
 	      if(array[j] > array[j+1]){
             token = array[j];
 		      array[j] = array[j+1];
@@ -81,4 +83,31 @@ void Sort<TDATO>::bubbleSort(){
          }
       }
    }
+}
+
+template <class TDATO>
+void Sort<TDATO>::quickSort(int l, int r) {
+   int left = l;
+   int right = r;
+   TDATO center = array[(l + r) / 2];
+   TDATO token;
+    do{
+      while((array[left] < center) && (right <= r)) {
+         left++;
+      }
+      while((center < array[right]) && (right > l)) {
+         right--;
+      }
+      if(left <= right) {
+         token = array[left];
+         array[left] = array[right];
+         array[right] = token;
+         left++;
+         right--;
+      }
+   }while( left <= right );
+   if( l < right )
+      quickSort(l, right);
+   if( left < r )
+      quickSort(left, r);
 }
