@@ -5,11 +5,11 @@
 ### Enunciado
 Desarrollar en lenguaje **C++** diferentes algoritmos de ordenación y realizar un análisis de rendimiento de los algoritmos implementados.
 
-* **Inserción**
-* **Burbuja**
-* **ShellSort:** Debe permitir seleccionar la constante de reducción alfa, siendo `0 < alfa < 1`
-* **QuickSort**
-* **MergeSort**
+* [x] **Inserción**
+* [x]**Burbuja**
+* [ ]**ShellSort:** Debe permitir seleccionar la constante de reducción alfa, siendo `0 < alfa < 1`
+* [x]**QuickSort**
+* [ ]**MergeSort**
 
 La implementación se realizará mediante una plantilla de función en la que se especifique el tipo de elementos a ordenar y que deberá tener esta forma: `funcion(secuenciaAOrdenar,tamañoDeSecuencia)`.
 
