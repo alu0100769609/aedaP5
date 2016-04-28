@@ -11,7 +11,8 @@ typedef int type;
 int main () {
    system("clear");
 
-//   DNI miDni;
+   DNI miDni[2];
+/*
    type v[10] = {15,11,19,16,17,14,12,18,10,13};
 
    // Send to Sort one vector of 10 elements.
@@ -25,19 +26,35 @@ int main () {
    t.quickSort(0,t.getSize());
    cout << "Vector despues: ";
    t.printItems();
+*/
 
 
-/*
    try{
-      cout << "Enter DNI: ";
-      cin >> miDni;
+      cout << "Enter DNI-1: ";
+      cin >> miDni[0];
+      cout << "Enter DNI-2: ";
+      cin >> miDni[1];
+
    }
    catch (const invalid_argument& error) {
       cout << error.what() << endl;
       return 0;
    }
-   cout << "Your entry: " << miDni << endl;
-*/
+   if (miDni[0] >= miDni[1])
+      cout << "Is 1 >= than 2?: yes" << endl;
+   else
+      cout << "Is 1 >= than 2?: no" << endl;
 
+   if (miDni[0] <= miDni[1])
+      cout << "Is 1 <= than 2?: yes" << endl;
+   else
+      cout << "Is 1 <= than 2?: no" << endl;
+
+   if (miDni[0] == miDni[1])
+      cout << "Is 1 == 2?: yes" << endl;
+   else
+      cout << "Is 1 == 2?: no" << endl;
+
+   cout << "DNIs are: " << miDni[0] << ", " << miDni[1] << endl;
    return 0;
 }
