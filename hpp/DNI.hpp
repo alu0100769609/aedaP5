@@ -107,7 +107,7 @@ ostream& operator << (ostream& os, DNI& dni) {
    return os;                                // Return formatted DNI
 }
 
-istream& operator >>(istream& is, DNI& dni) {
+istream& operator >>(istream& is, DNI& dni) {   // Sort program is not using this 
    long int num;
    is >> ws;                                 // Eat up any leading white spaces
                                              // Start of parse input

@@ -18,9 +18,9 @@ public:
    ~Sort();                            // Default destructor
 
 public:                 // Public Sort methods
-   void directInsertion();             // Direct insertion
-   void bubbleSort();                  // Bubble sort
-   void quickSort(int, int);           // Quick sort
+   void directInsertion(int);             // Direct insertion (int mode)
+   void bubbleSort(int);                  // Bubble sort (int mode)
+   void quickSort(int, int, int);           // Quick sort (3rd param = int mode)
 public:
    void printItems();
    int getSize() { return size; }
@@ -55,7 +55,7 @@ void Sort<TDATO>::printItems(){
 
 ///////////////////////////////// Sort Methods /////////////////////////////////
 template <class TDATO>
-void Sort<TDATO>::directInsertion(){
+void Sort<TDATO>::directInsertion(int mode){
    TDATO token;
    for (int i = 1; i < size; i++) {
       token = array[i];
@@ -69,7 +69,7 @@ void Sort<TDATO>::directInsertion(){
 }
 
 template <class TDATO>
-void Sort<TDATO>::bubbleSort(){
+void Sort<TDATO>::bubbleSort(int mode){
    TDATO token;
    for(int i = 0; i < size; i++){
       // Comparsion
@@ -85,7 +85,7 @@ void Sort<TDATO>::bubbleSort(){
 }
 
 template <class TDATO>
-void Sort<TDATO>::quickSort(int l, int r) {
+void Sort<TDATO>::quickSort(int l, int r, int mode) {
    int left = l;
    int right = r;
    TDATO center = array[(l + r) / 2];
@@ -106,7 +106,7 @@ void Sort<TDATO>::quickSort(int l, int r) {
       }
    }while( left <= right );
    if( l < right )
-      quickSort(l, right);
+      quickSort(l, right, mode);
    if( left < r )
-      quickSort(left, r);
+      quickSort(left, r, mode);
 }
