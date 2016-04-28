@@ -32,11 +32,11 @@ public:                    // Public inline overload method
    bool operator ==(const DNI dni) const {
       return (number == dni.number);
    }
-   bool operator >=(const DNI dni) const {
-      return (number >= dni.number);
+   bool operator >(const DNI dni) const {
+      return (number > dni.number);
    }
-   bool operator <=(const DNI dni) const {
-      return (number <= dni.number);
+   bool operator <(const DNI dni) const {
+      return (number < dni.number);
    }
 };
 

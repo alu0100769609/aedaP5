@@ -24,6 +24,14 @@ int main () {
 
    vector<T_KEY> myDNIs = CreateDNI(NUMBER_OF_DNI);  // create vector with DNIs
    Sort<T_KEY> sortDNIs = Sort<T_KEY>(myDNIs,NUMBER_OF_DNI);
+
+
+   cout << "Vector antes: ";
+   sortDNIs.printItems();
+
+   sortDNIs.directInsertion();
+   cout << "Vector despues: ";
+   sortDNIs.printItems();
 /*
    type v[10] = {15,11,19,16,17,14,12,18,10,13};
 

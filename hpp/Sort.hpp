@@ -9,12 +9,12 @@ using namespace std;
 template <class TDATO>
 class Sort{
 private:
-   TDATO* array;                       // Array with elements
+   vector<TDATO> array;                // Array with elements
    int size;                           // Size of array
 
 public:
 //   Sort();                           // Default constructor
-   Sort(TDATO vector[], int size);     // Constructor (Vector, size of vector)
+   Sort(vector<TDATO> vector, int size);     // Constructor (Vector, size of vector)
    ~Sort();                            // Default destructor
 
 public:                 // Public Sort methods
@@ -35,15 +35,14 @@ Sort<TDATO>::Sort(){
 }
 */
 template <class TDATO>
-Sort<TDATO>::Sort(TDATO vector[], int size){
-   array = new TDATO[size];
+Sort<TDATO>::Sort(vector<TDATO> vector, int size){
    array = vector;   ///////////////////////////////////////////////PROBLEM HERE////////////////////////////////////
    this->size = size;
 }
 
 template <class TDATO>
 Sort<TDATO>::~Sort(){
-   delete array;
+//   delete array;
 }
 
 template <class TDATO>
