@@ -31,38 +31,70 @@ int main () {
         << "*   Welcome   *\n"
         << "* * * * * * * *\n" << endl;
 
-   do {
-      cout << "Choose one option:\n"
+   cout << "Choose one option:\n"
+        << "0. Exit\n"
+        << "1. Demo mode\n"
+        << "2. Statistic mode" << endl;
+   cin >> mode;
+   system("clear");
+
+   if (mode == 0) {
+      return 0;
+   }
+   else if (mode == 1) {
+      vector<T_KEY> myDNIs = CreateDNI(NUMBER_OF_DNI);  // Create vector with DNIs
+      Sort<T_KEY> sortDNIs = Sort<T_KEY>(myDNIs,NUMBER_OF_DNI);// Create Sort class
+
+      cout << "Select sort method:\n"
            << "0. Exit\n"
-           << "1. Demo mode\n"
-           << "2. Statistic mode" << endl;
-      cin >> mode;
+           << "1. Direct Insertion\n"
+           << "2. Bubble sort\n"
+           << "3. Quick sort\n" << endl;
+      cin >> option;
       system("clear");
 
-      if (mode == 0) {
-         return 0;
+      switch (option) {
+         case 0:
+            return 0;                // Exit
+         case 1:
+            sortDNIs.directInsertion(mode);
+            cout << "\nVector after:";
+            sortDNIs.printItems();
+            break;                     //Exit after finish sort
+         case 2:
+            sortDNIs.bubbleSort(mode);
+            cout << "\nVector after:";
+            sortDNIs.printItems();
+            break;                     //Exit after finish sort
+         case 3:
+            sortDNIs.quickSort(0, sortDNIs.getSize(), mode);
+            cout << "\nVector after:";
+            sortDNIs.printItems();
+            break;                     //Exit after finish sort
+         default:
+            cout << "..Wrong option.." << endl;
       }
-      else if (mode == 1) {
-         vector<T_KEY> myDNIs = CreateDNI(NUMBER_OF_DNI);  // Create vector with DNIs
-         Sort<T_KEY> sortDNIs = Sort<T_KEY>(myDNIs,NUMBER_OF_DNI);// Create Sort class
+   }
+   else if (mode == 2) {
+      vector<T_KEY> myDNIs = CreateDNI(NUMBER_OF_DNI);  // Create vector with DNIs
+      Sort<T_KEY> sortDNIs1 = Sort<T_KEY>(myDNIs,NUMBER_OF_DNI);// Create Sort class
+      Sort<T_KEY> sortDNIs2 = Sort<T_KEY>(myDNIs,NUMBER_OF_DNI);// Create Sort class
+      Sort<T_KEY> sortDNIs3 = Sort<T_KEY>(myDNIs,NUMBER_OF_DNI);// Create Sort class
+      system("clear");
+      int aux1, aux2, aux3;
+      aux1 = sortDNIs1.directInsertion(mode);
+      cout << aux1 << endl;
+      aux2 = sortDNIs2.bubbleSort(mode);
+      aux3 = sortDNIs3.quickSort(0, sortDNIs3.getSize(), mode);
 
-         cout << "Select sort method:\n"
-              << "0. Exit\n"
-              << "1. Direct Insertion\n"
-              << "2. Bubble sort\n"
-              << "3. Quick sort\n" << endl;
-         cin >> option;
-         system("clear");
+      cout << "|         |   Min    |  Medium  |   Max    |\n"
+           << "|---------|----------|----------|----------|\n"
+           << "| Direct  |   xxx    |   xxx    |    " << aux1 << "   |\n"
+           << "| Bubble  |   xxx    |   xxx    |    " << aux2 << "   |\n"
+           << "| Quick   |   xxx    |   xxx    |    " << aux3 << "   |\n" << endl;
 
-         switch (option) {
-            case 0: return 0;                // Exit
-            case 1: sortDNIs.directInsertion(mode); break;
-            case 2: sortDNIs.bubbleSort(mode); break;
-            case 3: sortDNIs.quickSort(0, sortDNIs.getSize(), mode); break;
-            default: cout << "..Wrong option.." << endl;
-         }
       }
-   } while (true);
+   return 0;
 /*
    cout << "Vector antes: ";
    sortDNIs.printItems();
@@ -85,7 +117,6 @@ int main () {
       return 0;
    }
 */
-   return 0;
 }
 
 ///////////////////////////////////////////////////////////////////////////////

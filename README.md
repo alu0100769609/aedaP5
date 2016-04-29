@@ -54,7 +54,7 @@ Al ejecutar el programa nos pedirá la inserción de un DNI. Los formatos permit
 #### Compilación
 
 ```bash
-$ g++ main/main.cpp cpp/*.cpp -o main.out
+$ g++ main/main.cpp cpp/*.cpp -std=c++11 -o main.out
 ```
 
 #### Ejecución
