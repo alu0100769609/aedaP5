@@ -11,7 +11,6 @@ using namespace std;
 
 typedef DNI T_KEY;
 #define SIZE 50000000                  // To generate random DNIs
-#define NUMBER_OF_DNI 25               // 25 DNIs
 
 ///////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// DECLARED FUNCIONS //////////////////////////////
@@ -36,6 +35,9 @@ int main () {
         << "1. Demo mode\n"
         << "2. Statistic mode" << endl;
    cin >> mode;
+   int NUMBER_OF_DNI;
+   cout << "How much DNIs? ";
+   cin >> NUMBER_OF_DNI;
    system("clear");
 
    if (mode == 0) {
@@ -83,15 +85,14 @@ int main () {
       system("clear");
       int aux1, aux2, aux3;
       aux1 = sortDNIs1.directInsertion(mode);
-      cout << aux1 << endl;
       aux2 = sortDNIs2.bubbleSort(mode);
       aux3 = sortDNIs3.quickSort(0, sortDNIs3.getSize(), mode);
 
       cout << "|         |   Min    |  Medium  |   Max    |\n"
            << "|---------|----------|----------|----------|\n"
-           << "| Direct  |   xxx    |   xxx    |    " << aux1 << "   |\n"
-           << "| Bubble  |   xxx    |   xxx    |    " << aux2 << "   |\n"
-           << "| Quick   |   xxx    |   xxx    |    " << aux3 << "   |\n" << endl;
+           << "| Direct  | " << aux1 << "\t     | " << aux1 << "\t| " << aux1 << "\t   |\n"
+           << "| Bubble  | " << aux2 << "\t     | " << aux2 << "\t| " << aux2 << "\t   |\n"
+           << "| Quick   | " << aux3 << "\t     | " << aux3 << "\t| " << aux3 << "\t   |\n" << endl;
 
       }
    return 0;
