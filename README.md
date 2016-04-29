@@ -44,12 +44,17 @@ El objetivo de esta práctica es la implementación de los **algoritmos de orden
 
 ### Forma de uso
 
-Al ejecutar el programa nos pedirá la inserción de un DNI. Los formatos permitidos para el DNI son los siguientes:
+Al ejecutar el programa nos preguntará qué modo ejecutar, y si es modo demostración podremos elegir entre los algoritmos disponibles. Si elegimos el modo estadístico nos mostrará una tabla con las pruebas para los diferentes algorimos.
 
-| MAYÚSCULAS | MINÚSCULAS |   ESPACIOS   |
-|------------|------------|--------------|
-| 12345678A  | 12345678a  | 12345678 a   |
-| 12345678-A | 12345678-a | 12345678 - a |
+**NOTA:** Si nos fijamos en DNI.hpp, están sobrecargados los métodos `<<` y `>>` pero no se utilizan en ningún momento. Para probarlos se puede introducir algo como esto en el main:
+
+```c++
+ DNI miDNI;
+ cout << "Introduce DNI (sin letra): ";
+ cin >> miDNI;
+ cout << "El DNI que introdujiste fue: " << miDNI << endl;
+```
+El código anterior mostrará como salida el mismo DNI que se introdujo y le añadirá la letra correspondiente.
 
 #### Compilación
 
